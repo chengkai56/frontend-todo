@@ -1,15 +1,16 @@
 // import React, { Component } from 'react'
 import axios from 'axios'
+import { API_URL } from "../../Constants";
 
 class HelloWorldService {
 
     executeHelloWorldService() {
-        return axios.get('http://localhost:8080/hello-world')
+        return axios.get(`${API_URL}/hello-world`)//'http://localhost:8080/hello-world')
         // console.log('executed service')
     }
 
     executeHelloWorldBeanService() {
-        return axios.get('http://localhost:8080/hello-world-bean')
+        return axios.get(`${API_URL}/hello-world-bean`) //'http://localhost:8080/hello-world-bean')
     }
 
     executeHelloWorldPathVariableService(name) {
@@ -18,7 +19,7 @@ class HelloWorldService {
 
         // let basicAuthHeader = 'Basic ' + window.btoa(username + ":" + password)
 
-        return axios.get(`http://localhost:8080/hello-world/path-variable/${name}`
+        return axios.get(`${API_URL}/hello-world/path-variable/${name}`
             // // ,
             // //     {
             // //         headers: {
